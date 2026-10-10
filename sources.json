@@ -1,0 +1,10 @@
+{
+  "sources": [
+    {
+      "id": "opencurious",
+      "adapter": "opencurious",
+      "url": "https://www.opencurious.com/ai-conference-deadlines",
+      "enabled": true
+    }
+  ]
+}
