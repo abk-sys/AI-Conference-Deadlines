@@ -2,7 +2,8 @@ name: Update conference deadlines
 
 on:
   schedule:
-    - cron: '17 6 * * *' # Daily 06:17 UTC
+    - cron: '17 */6 * * *' # Runs at 17 minuts past the hour, every 6 hours 
+    # '17 /6 * * *'  Daily 06:17 UTC
   workflow_dispatch:
 
 permissions:
