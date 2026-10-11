@@ -6,7 +6,7 @@ The four columns match the source: **Conference · Deadline · Location · Time 
 
 <!-- CONFERENCES:START -->
 
-Last successful refresh: **2026-10-11 05:55 UTC** · **11 upcoming** · **7 passed**
+Last successful refresh: **2026-10-11 12:59 UTC** · **11 upcoming** · **7 passed**
 
 Sources: [opencurious](<https://www.opencurious.com/ai-conference-deadlines>). Confirmation labels are reported by the source, not independently verified.
 
@@ -14,17 +14,17 @@ Countdowns are snapshots at refresh time, using end-of-day Anywhere-on-Earth (UT
 
 | Conference | Deadline | Location | Time left |
 | --- | --- | --- | --- |
-| [FAccT 2027](<https://facctconference.org/>)<br>ACM Conference on Fairness, Accountability, and Transparency<br>AI · ML | Abstract: 2026-10-27<br>Paper: 2026-11-03<br>Confirmed · [Dates / CFP](<https://facctconference.org/2027/cfp.html>) | Porto, Portugal | 🟡 24d 6h |
-| [CVPR 2027](<https://cvpr.thecvf.com/>)<br>IEEE/CVF Conference on Computer Vision and Pattern Recognition<br>CV · ML | Abstract: 2026-11-10<br>Paper: 2026-11-16<br>Confirmed · [Dates / CFP](<https://cvpr.thecvf.com/Conferences/2027/Dates>) | Seattle, Washington, USA | 🟡 37d 6h |
-| [IJCAI 2027](<https://2027.ijcai.org/>)<br>International Joint Conference on Artificial Intelligence<br>AI | Abstract: 2027-01-04<br>Paper: 2027-01-11<br>Confirmed | Kyoto, Japan | 🟢 93d |
-| [ICML 2027](<https://icml.cc/>)<br>International Conference on Machine Learning<br>ML | Abstract: 2027-01-16<br>Paper: 2027-01-22<br>Projected · [Dates / CFP](<https://icml.cc/Conferences/FutureMeetings>) | South America (city TBA) | 🟢 ≈ 104d |
+| [FAccT 2027](<https://facctconference.org/>)<br>ACM Conference on Fairness, Accountability, and Transparency<br>AI · ML | Abstract: 2026-10-27<br>Paper: 2026-11-03<br>Confirmed · [Dates / CFP](<https://facctconference.org/2027/cfp.html>) | Porto, Portugal | 🟡 23d 23h |
+| [CVPR 2027](<https://cvpr.thecvf.com/>)<br>IEEE/CVF Conference on Computer Vision and Pattern Recognition<br>CV · ML | Abstract: 2026-11-10<br>Paper: 2026-11-16<br>Confirmed · [Dates / CFP](<https://cvpr.thecvf.com/Conferences/2027/Dates>) | Seattle, Washington, USA | 🟡 36d 23h |
+| [IJCAI 2027](<https://2027.ijcai.org/>)<br>International Joint Conference on Artificial Intelligence<br>AI | Abstract: 2027-01-04<br>Paper: 2027-01-11<br>Confirmed | Kyoto, Japan | 🟢 92d |
+| [ICML 2027](<https://icml.cc/>)<br>International Conference on Machine Learning<br>ML | Abstract: 2027-01-16<br>Paper: 2027-01-22<br>Projected · [Dates / CFP](<https://icml.cc/Conferences/FutureMeetings>) | South America (city TBA) | 🟢 ≈ 103d |
 | [ACL 2027](<https://2027.aclweb.org/>)<br>Annual Meeting of the Association for Computational Linguistics<br>NLP | Jan 2027<br>Projected; month only | Kyoto, Japan | Exact date TBA |
-| [COLT 2027](<https://learningtheory.org/colt2027/>)<br>Annual Conference on Learning Theory<br>ML | 2027-02-05<br>Projected | Tokyo, Japan | 🟢 ≈ 118d |
-| [UAI 2027](<https://www.auai.org/>)<br>Conference on Uncertainty in Artificial Intelligence<br>ML · AI | 2027-02-12<br>Projected | TBA | 🟢 ≈ 125d |
+| [COLT 2027](<https://learningtheory.org/colt2027/>)<br>Annual Conference on Learning Theory<br>ML | 2027-02-05<br>Projected | Tokyo, Japan | 🟢 ≈ 117d |
+| [UAI 2027](<https://www.auai.org/>)<br>Conference on Uncertainty in Artificial Intelligence<br>ML · AI | 2027-02-12<br>Projected | TBA | 🟢 ≈ 124d |
 | [KDD 2027](<https://kdd2027.kdd.org/>)<br>ACM SIGKDD Conference on Knowledge Discovery and Data Mining<br>Data Mining · ML | Feb 2027<br>Projected; month only · [Dates / CFP](<https://kdd2027.kdd.org/research-track-call-for-papers/>) | San Jose, California, USA | Exact date TBA |
-| [ICCV 2027](<https://iccv.thecvf.com/>)<br>IEEE/CVF International Conference on Computer Vision<br>CV | Abstract: 2027-03-01<br>Paper: 2027-03-08<br>Projected | Hong Kong | 🟢 ≈ 149d |
-| [ECAI 2027](<https://ecai2027.org/>)<br>European Conference on Artificial Intelligence<br>AI | 2027-04-14<br>Confirmed | Athens, Greece | 🟢 186d |
-| [NeurIPS 2027](<https://neurips.cc/>)<br>Conference on Neural Information Processing Systems<br>ML | Abstract: 2027-05-14<br>Paper: 2027-05-21<br>Projected · [Dates / CFP](<https://neurips.cc/Conferences/FutureMeetings>) | Europe (city TBA) | 🟢 ≈ 223d |
+| [ICCV 2027](<https://iccv.thecvf.com/>)<br>IEEE/CVF International Conference on Computer Vision<br>CV | Abstract: 2027-03-01<br>Paper: 2027-03-08<br>Projected | Hong Kong | 🟢 ≈ 148d |
+| [ECAI 2027](<https://ecai2027.org/>)<br>European Conference on Artificial Intelligence<br>AI | 2027-04-14<br>Confirmed | Athens, Greece | 🟢 185d |
+| [NeurIPS 2027](<https://neurips.cc/>)<br>Conference on Neural Information Processing Systems<br>ML | Abstract: 2027-05-14<br>Paper: 2027-05-21<br>Projected · [Dates / CFP](<https://neurips.cc/Conferences/FutureMeetings>) | Europe (city TBA) | 🟢 ≈ 222d |
 
 <details>
 <summary>Show passed deadlines</summary>
