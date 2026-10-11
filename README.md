@@ -6,7 +6,7 @@ The four columns match the source: **Conference · Deadline · Location · Time 
 
 <!-- CONFERENCES:START -->
 
-Last successful refresh: **2026-10-10 21:49 UTC** · **11 upcoming** · **7 passed**
+Last successful refresh: **2026-10-11 05:55 UTC** · **11 upcoming** · **7 passed**
 
 Sources: [opencurious](<https://www.opencurious.com/ai-conference-deadlines>). Confirmation labels are reported by the source, not independently verified.
 
@@ -14,8 +14,8 @@ Countdowns are snapshots at refresh time, using end-of-day Anywhere-on-Earth (UT
 
 | Conference | Deadline | Location | Time left |
 | --- | --- | --- | --- |
-| [FAccT 2027](<https://facctconference.org/>)<br>ACM Conference on Fairness, Accountability, and Transparency<br>AI · ML | Abstract: 2026-10-27<br>Paper: 2026-11-03<br>Confirmed · [Dates / CFP](<https://facctconference.org/2027/cfp.html>) | Porto, Portugal | 🟡 24d 14h |
-| [CVPR 2027](<https://cvpr.thecvf.com/>)<br>IEEE/CVF Conference on Computer Vision and Pattern Recognition<br>CV · ML | Abstract: 2026-11-10<br>Paper: 2026-11-16<br>Confirmed · [Dates / CFP](<https://cvpr.thecvf.com/Conferences/2027/Dates>) | Seattle, Washington, USA | 🟡 37d 14h |
+| [FAccT 2027](<https://facctconference.org/>)<br>ACM Conference on Fairness, Accountability, and Transparency<br>AI · ML | Abstract: 2026-10-27<br>Paper: 2026-11-03<br>Confirmed · [Dates / CFP](<https://facctconference.org/2027/cfp.html>) | Porto, Portugal | 🟡 24d 6h |
+| [CVPR 2027](<https://cvpr.thecvf.com/>)<br>IEEE/CVF Conference on Computer Vision and Pattern Recognition<br>CV · ML | Abstract: 2026-11-10<br>Paper: 2026-11-16<br>Confirmed · [Dates / CFP](<https://cvpr.thecvf.com/Conferences/2027/Dates>) | Seattle, Washington, USA | 🟡 37d 6h |
 | [IJCAI 2027](<https://2027.ijcai.org/>)<br>International Joint Conference on Artificial Intelligence<br>AI | Abstract: 2027-01-04<br>Paper: 2027-01-11<br>Confirmed | Kyoto, Japan | 🟢 93d |
 | [ICML 2027](<https://icml.cc/>)<br>International Conference on Machine Learning<br>ML | Abstract: 2027-01-16<br>Paper: 2027-01-22<br>Projected · [Dates / CFP](<https://icml.cc/Conferences/FutureMeetings>) | South America (city TBA) | 🟢 ≈ 104d |
 | [ACL 2027](<https://2027.aclweb.org/>)<br>Annual Meeting of the Association for Computational Linguistics<br>NLP | Jan 2027<br>Projected; month only | Kyoto, Japan | Exact date TBA |
