@@ -87,12 +87,12 @@ class TrackerTests(unittest.TestCase):
         }
         completed = type('Result', (), {'returncode': 0, 'stdout': json.dumps(facts), 'stderr': ''})()
         with patch('conference_tracker.sources.official_copilot.subprocess.run', return_value=completed) as run:
-            result = CopilotExtractor(model='test-model').extract('test-2027', OFFICIAL, pages)
+            result = CopilotExtractor().extract('test-2027', OFFICIAL, pages)
         self.assertEqual(result['deadline'], '2026-10-08')
         command = run.call_args.args[0]
         self.assertEqual(command[0], 'copilot')
         self.assertIn('--no-ask-user', command)
-        self.assertIn('--model', command)
+        self.assertNotIn('--model', command)
 
     def test_failed_ai_record_becomes_todo_not_table_data(self):
         bad = FakeExtractor()
