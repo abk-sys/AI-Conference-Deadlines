@@ -58,10 +58,10 @@ GitHub supplies `GITHUB_TOKEN` automatically. Give the workflow `contents: write
 
 | Layer | Jobs repository | This conference project |
 | --- | --- | --- |
-| Collection | Upstream collection not included | Included OpenCurious adapter |
-| Data storage | External Supabase | Versioned JSON in repository |
+| Collection | Upstream collection not included | Directory URL discovery plus official-site AI extraction |
+| Data storage | External Supabase | Versioned JSON and CSV in repository |
 | Runtime | Bun / TypeScript | Python standard library |
-| Credentials | Supabase credentials and commit settings | Automatic GitHub token only |
+| Credentials | Supabase credentials and commit settings | Built-in GitHub token and the repository owner's Copilot allowance |
 | Rendering | Marked Markdown tables | Marked four-column Markdown table |
 | Scheduling | GitHub Actions, daily 12:00 UTC | GitHub Actions, daily 06:17 UTC |
 | Extensibility | Database queries and table configuration | Source adapters and shared record schema |
