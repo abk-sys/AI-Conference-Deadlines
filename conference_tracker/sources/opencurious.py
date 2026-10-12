@@ -1,4 +1,4 @@
-"""OpenCurious adapter: discover assets from the page, parse data literals."""
+"""OpenCurious directory adapter: discover official conference URLs only."""
 import json
 import re
 from html.parser import HTMLParser
@@ -53,12 +53,13 @@ def extract_records(script):
             records = LiteralParser(script, match.start()).value()
         except (ValueError, IndexError):
             continue
-        if records and all(isinstance(r, dict) and {'name', 'slug', 'deadline', 'website'} <= r.keys() for r in records):
+        if records and all(isinstance(record, dict) and {'slug', 'website'} <= record.keys() for record in records):
             return records
     return None
 
 
 def fetch(config, client):
+    """Return canonical IDs and HTTPS official URLs; discard all directory facts."""
     url = config['url']
     page = Page(client.get(url))
     expected = listed_slugs(page)
@@ -69,22 +70,19 @@ def fetch(config, client):
         records = extract_records(client.get(asset_url))
         if records is None:
             continue
-        selected = [r for r in records if r['slug'] in expected]
-        if len(selected) != len(expected) or {r['slug'] for r in selected} != expected:
+        selected = [record for record in records if record['slug'] in expected]
+        if len(selected) != len(expected) or {record['slug'] for record in selected} != expected:
             raise ValueError('OpenCurious index and asset disagree; retaining previous files')
-        return [normalize(row, config, asset_url) for row in selected]
+        result, seen_urls = [], set()
+        for record in selected:
+            website = record['website']
+            parsed = urlsplit(website)
+            if parsed.scheme != 'https' or not parsed.netloc or website in seen_urls:
+                raise ValueError(f'Invalid or duplicate official URL for {record["slug"]}')
+            seen_urls.add(website)
+            result.append({
+                'id': record['slug'], 'website': website,
+                'directory_sources': [{'id': config['id'], 'url': url, 'asset_url': asset_url}],
+            })
+        return result
     raise ValueError('OpenCurious data array not found; the website format may have changed')
-
-
-def normalize(row, config, asset_url):
-    return {
-        'id': row['slug'], 'name': row['name'], 'full_name': row['fullName'],
-        'fields': row['fields'], 'deadline': row['deadline'],
-        'abstract_deadline': row.get('abstractDeadline'),
-        'deadline_precision': row.get('deadlinePrecision', 'day'),
-        'deadline_status': 'confirmed' if row.get('deadlineConfirmed') is True else 'projected',
-        'location': row['location'], 'website': row['website'],
-        'dates_url': row.get('datesUrl'), 'conference_dates': row.get('conferenceDates'),
-        'source_reviewed_on': row.get('verifiedOn'),
-        'sources': [{'id': config['id'], 'url': config['url'], 'asset_url': asset_url}],
-    }
