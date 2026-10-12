@@ -6,6 +6,8 @@ from urllib.parse import quote, urlsplit
 AOE = timezone(timedelta(hours=-12))
 START = '<!-- CONFERENCES:START -->'
 END = '<!-- CONFERENCES:END -->'
+TODO_START = '<!-- SCRAPER-TODOS:START -->'
+TODO_END = '<!-- SCRAPER-TODOS:END -->'
 
 
 def validate(row):
@@ -90,7 +92,7 @@ def render(rows, now):
     source_links = ', '.join(link(k, v) for k, v in sorted(sources.items()))
     return '\n\n'.join([
         f'Last successful refresh: **{now:%Y-%m-%d %H:%M UTC}** · **{len(upcoming)} upcoming** · **{len(passed)} passed**',
-        f'Sources: {source_links}. Confirmation labels are reported by the source, not independently verified.',
+        f'Official sources: {source_links}. Each published deadline/location has AI-returned evidence checked against fetched official-page text.',
         'Countdowns are snapshots at refresh time, using end-of-day Anywhere-on-Earth (UTC−12). '
         '≈ indicates a projected date; month-only deadlines have no precise countdown. '
         'Always check the linked official dates / CFP, including required abstract registration.',
@@ -99,9 +101,18 @@ def render(rows, now):
     ])
 
 
-def replace_section(readme, content):
-    if readme.count(START) != 1 or readme.count(END) != 1 or readme.index(START) >= readme.index(END):
+def replace_section(readme, content, start=START, end=END):
+    if readme.count(start) != 1 or readme.count(end) != 1 or readme.index(start) >= readme.index(end):
         raise ValueError('README must contain exactly one correctly ordered marker pair')
-    before, rest = readme.split(START)
-    _, after = rest.split(END)
-    return before + START + '\n\n' + content + '\n\n' + END + after
+    before, rest = readme.split(start)
+    _, after = rest.split(end)
+    return before + start + '\n\n' + content + '\n\n' + end + after
+
+
+def render_todos(todos):
+    if not todos:
+        return '_No outstanding official-site extraction TODOs._'
+    lines = []
+    for todo in sorted(todos, key=lambda item: item['id']):
+        lines.append(f'- {link(todo["id"], todo["website"])} — {cell(todo["description"])}')
+    return '\n'.join(lines)
