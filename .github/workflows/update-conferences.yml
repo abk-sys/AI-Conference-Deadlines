@@ -8,8 +8,6 @@ on:
 permissions:
   contents: write
   copilot-requests: write
-  models: read
-
 
 concurrency:
   group: update-conferences
@@ -33,7 +31,6 @@ jobs:
       - name: Fetch conferences and update README
         env:
           GITHUB_TOKEN: ${{ github.token }}
-          COPILOT_MODEL: ${{ vars.COPILOT_MODEL }}
         run: python -m conference_tracker.update
       - name: Commit and push generated files
         env:
