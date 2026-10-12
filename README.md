@@ -48,12 +48,14 @@ python -m conference_tracker.update --dry-run
 
 ## Enable automatic updates on GitHub
 
-1. Create an empty GitHub repository and push all project files, including `.github`.
-2. Ensure your GitHub account has Copilot Free or a paid Copilot plan.
-3. Open **Actions → Update conference deadlines → Run workflow → Run workflow**.
-4. Optional: create an Actions variable named `COPILOT_MODEL` only when you want to select a model available to your Copilot plan.
+1. Create an empty **personal** GitHub repository and push all project files, including `.github`.
+2. Open [GitHub Copilot settings](https://github.com/settings/copilot) and activate **Copilot Free**. Confirm that Copilot CLI is available for this account.
+3. In **Actions → General**, allow workflow permissions to write to the repository.
+4. Open **Actions → Update conference deadlines → Run workflow → Run workflow**.
 
-The workflow runs each Sunday at 06:17 UTC and commits the README plus all generated data files. It uses GitHub's automatic, short-lived `GITHUB_TOKEN` for both Copilot CLI authentication and repository commits. No API key or repository secret is required; usage is charged against the repository owner's Copilot allowance. Use **Run workflow** for an additional refresh, or change the cron after reviewing your Copilot usage.
+The workflow runs each Sunday at 06:17 UTC and commits the README plus all generated data files. It uses GitHub's automatic, short-lived `GITHUB_TOKEN` for both Copilot CLI authentication and repository commits. No API key or repository secret is required. Copilot Free uses automatic model selection, so this project deliberately does not pass a model name. Use **Run workflow** for an additional refresh after checking your Copilot Free usage.
+
+If the log says **"Access denied by policy settings"**, Copilot Free has not been activated for the account that owns the repository, or the repository belongs to an organization whose Copilot policy blocks CLI use. Activate Copilot Free in the linked settings page; for organization repositories, an administrator must enable Copilot CLI and organization-billed use instead.
 
 ## Add sources
 
