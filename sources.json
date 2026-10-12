@@ -1,8 +1,8 @@
 {
-  "sources": [
+  "directory_sources": [
     {
       "id": "opencurious",
-      "adapter": "opencurious",
+      "adapter": "opencurious_directory",
       "url": "https://www.opencurious.com/ai-conference-deadlines",
       "enabled": true
     }
