@@ -5,7 +5,6 @@ collects a small set of same-domain CFP/date pages, and asks GitHub Copilot CLI
 for JSON that is checked against quoted evidence from those pages.
 """
 import json
-import os
 import re
 import subprocess
 from html import unescape
@@ -78,9 +77,8 @@ SCHEMA = {
 
 class CopilotExtractor:
     """Use the Actions-authenticated Copilot CLI; no external API key is read."""
-    def __init__(self, command='copilot', model=None):
+    def __init__(self, command='copilot'):
         self.command = command
-        self.model = model or os.environ.get('COPILOT_MODEL')
 
     def extract(self, conference_id, website, pages):
         evidence = '\n\n'.join(f'URL: {page.source}\nTEXT: {page.text[:16000]}' for page in pages)
@@ -95,8 +93,6 @@ OFFICIAL EVIDENCE START
 {evidence}
 OFFICIAL EVIDENCE END'''
         command = [self.command, '-p', prompt, '-s', '--no-ask-user']
-        if self.model:
-            command.extend(['--model', self.model])
         try:
             completed = subprocess.run(command, capture_output=True, text=True, timeout=120, check=False)
         except FileNotFoundError as error:
