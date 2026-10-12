@@ -2,12 +2,12 @@ name: Update conference deadlines
 
 on:
   schedule:
-    - cron: '17 */6 * * *' # Runs at 17 minuts past the hour, every 6 hours 
-    # '17 /6 * * *'  Daily 06:17 UTC
+    - cron: '17 6 * * 0' # Sunday 06:17 UTC; preserves Copilot Free allowance
   workflow_dispatch:
 
 permissions:
   contents: write
+  copilot-requests: write
 
 concurrency:
   group: update-conferences
@@ -24,9 +24,14 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: '3.12'
+      - name: Install GitHub Copilot CLI
+        run: npm install -g @github/copilot
       - name: Run regression tests
         run: python -m unittest discover -s tests -v
       - name: Fetch conferences and update README
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          COPILOT_MODEL: ${{ vars.COPILOT_MODEL }}
         run: python -m conference_tracker.update
       - name: Commit and push generated files
         env:
@@ -34,7 +39,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add README.md data/conferences.json
+          git add README.md data/conferences.json data/conferences.csv data/conference_websites.json data/scraper_todos.json
           if git diff --cached --quiet; then
             echo 'No changes to commit.'
           else
