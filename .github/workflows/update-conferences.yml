@@ -8,6 +8,8 @@ on:
 permissions:
   contents: write
   copilot-requests: write
+  models: read
+
 
 concurrency:
   group: update-conferences
